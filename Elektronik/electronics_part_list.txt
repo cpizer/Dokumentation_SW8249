@@ -1,0 +1,118 @@
+Partlist
+
+Exported from Electrics.sch at 11/8/2020 9:39 PM
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value              Device             Package            Library         Sheet
+
+C7                          CPOL-EU085CS-1AR   085CS_1AR          rcl             1
+C8                          CPOL-EU085CS-1AR   085CS_1AR          rcl             1
+C9                          CPOL-EU085CS-1AR   085CS_1AR          rcl             1
+C10                         CPOL-EU085CS-1AR   085CS_1AR          rcl             1
+C11                         CPOL-EU085CS-1AR   085CS_1AR          rcl             1
+C12                         CPOL-EU085CS-1AR   085CS_1AR          rcl             1
+D3       1N4004             1N4004             DO41-10            diode           1
+D4       15KEXX             15KEXX             CB429-17           diode           1
+D5       1N4004             1N4004             DO41-10            diode           1
+D6       1N4004             1N4004             DO41-10            diode           1
+DC1                         DC213R             CMK                dc-dc-converter 1
+DC2                         DC213R             CMK                dc-dc-converter 1
+DC4                         DC213R             CMK                dc-dc-converter 1
+F1                          FUSE2P             FUSE1              special         1
+F2                          FUSE2P             FUSE1              special         1
+F3                          FUSE2P             FUSE1              special         1
+F5                          FUSE2P             FUSE1              special         1
+G3       SL340B             SL340B             SL-340/B3.6V       battery         1
+G4       SL340B             SL340B             SL-340/B3.6V       battery         1
+U$1      2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$2      2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$3      2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$4      2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$5      LOGO8_24_CE        LOGO8_24_CE        LOGO8_24_CE        LOGO            1
+U$7      LOGO_DM16_24       LOGO_DM16_24       LOGO_DM16_24       LOGO            1
+U$8      2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$9      2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$10     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$11     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$12     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$13     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$14     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$15     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$16     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$17     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$18     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$19     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$20     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$21     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$22     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$23     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$24     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$25     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$26     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$27     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$28     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$29     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$30     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$31     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$32     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$33     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$34     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$35     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$36     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$37     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$38     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$39     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$40     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$41     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$42     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$43     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$44     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$45     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$46     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$47     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$48     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$49     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$50     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$51     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$52     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$53     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$54     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$55     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$56     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$57     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$58     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$59     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$60     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$61     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$62     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$63     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$64     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$65     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$66     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$67     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$68     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$69     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$70     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$71     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$72     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$73     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$74     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$75     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$76     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$77     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$78     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$79     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$80     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$81     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$82     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$83     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$84     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$85     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$86     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$87     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$89     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
+U$90     TELEMETRY_RECEIVER TELEMETRY_RECEIVER TELEMETRY_RECEIVER telemetry       1
+U$91     2_PIN_CONNENCTOR   2_PIN_CONNENCTOR   2_PIN_CONN         connectors      1
