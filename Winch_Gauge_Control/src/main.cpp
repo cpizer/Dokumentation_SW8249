@@ -116,6 +116,20 @@ void setup() {
   Serial.begin(115200);
   //turn the PID on
   speedGaugePID.SetMode(AUTOMATIC);
+  int i;
+  for(i=0; i<=3000; i++){
+    set_rpm_to_gauge(i);
+    delay(1);
+  }
+  delay(1000);
+  for(i=3000; i>=0; i--){
+    set_rpm_to_gauge(i);
+    delay(1);
+  }
+  set_rpm_to_gauge(0);
+  speed_gauge_controller.write(150);
+  delay(2000);
+  speed_gauge_controller.write(0);
 }
 
 void loop() {
