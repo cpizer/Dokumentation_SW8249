@@ -12,6 +12,7 @@
 #define POTI_INPUT_PIN A0
 
 #define RPM_GAUGE_MAX_PWM 50L
+#define RPM_PULSE_BUFFER_MAX 5UL
 
 #define SPEED_PULSE_BUFFER_MAX 19
 #define PULSE_WIDTH_TO_MEASURED_SPEED 1700
@@ -19,7 +20,7 @@
 #define SPEED_GAUGE_PULSES_BUFFER_SIZE 10
 #define PULSE_WIDTH_TO_SPEED 1873500L
 
-#define PULSE_WITH_TO_RPM 30000L
+#define PULSE_WITH_TO_RPM 30000UL
 
 #define CONTROLLER_UPDATE_INTERVAL 20L
 #define SPEED_CALCULATION_INTERVAL 200L
@@ -42,10 +43,12 @@ uint32_t pop_buffer;
 PID speedGaugePID(&speed_kph_displayed_f, &value_to_write_f, &speed_to_display_f, 0.2, 0.55, 0.01, DIRECT);
 
 //rev counter related variables
+volatile uint8_t rpm_pulse_buffer = 0;
+volatile bool rpm_pulse_buffer_limit_reached = false;
+uint32_t last_rpm_pulse = 0;
+
 uint32_t last_engine_pulse = 0;
-
 volatile bool rpm_pulse_detected = false;
-
 uint32_t rpm_to_display = 0;
 
 //speed counter related variables
@@ -54,10 +57,23 @@ uint32_t last_speed_pulse = 0;
 volatile uint8_t speed_pulse_buffer = 0;
 volatile bool speed_pulse_buffer_limit_reached = false;
 
-double displayed_speed(RingBuf<uint32_t, SPEED_GAUGE_PULSES_BUFFER_SIZE> *pulses_buffer){
+/*
+void calibrate_esc(void){
+  Serial.println("Calibrate ESC:");
+  Serial.println("Write 150deg to ESC");
+  speed_gauge_controller.write(180);
+  delay(2500);
+  Serial.println("Write 40deg to ESC");
+  speed_gauge_controller.write(0);
+  delay(2000);
+}
+*/
+
+//Calculates the speed, which is currently displayed by the speed gauge, based on the pulses from the light barrier
+double calc_displayed_speed(RingBuf<uint32_t, SPEED_GAUGE_PULSES_BUFFER_SIZE> *pulses_buffer){
   uint32_t diff_buffer = 0;
   uint32_t no_values_considered = 0;
-  uint32_t oldest_value = millis()>SPEED_GAUGE_PULSES_INTEGRATION_TIME?millis()-SPEED_GAUGE_PULSES_INTEGRATION_TIME:0;
+  uint32_t oldest_value = millis()>SPEED_GAUGE_PULSES_INTEGRATION_TIME?millis()-SPEED_GAUGE_PULSES_INTEGRATION_TIME:0; //Only relevant shortly after powering up the microcontroller
   for (int i = pulses_buffer->size()-1; i > 0; i--){
     uint32_t tmp_upper = (*pulses_buffer)[i];
     uint32_t tmp_lower = (*pulses_buffer)[i-1];
@@ -76,6 +92,7 @@ double displayed_speed(RingBuf<uint32_t, SPEED_GAUGE_PULSES_BUFFER_SIZE> *pulses
   }
 }
 
+//Sets all output pins connected to the RPM-gauge that way, that the gauge displays the desired RPM
 void set_rpm_to_gauge(uint32_t rpm_to_display){
   (rpm_to_display > 3000)?rpm_to_display=3000:0;
   if (rpm_to_display <= 1500){
@@ -91,6 +108,11 @@ void set_rpm_to_gauge(uint32_t rpm_to_display){
 
 void rpm_pulse_isr(){
   rpm_pulse_detected = true;
+  rpm_pulse_buffer++;
+  if (rpm_pulse_buffer == RPM_PULSE_BUFFER_MAX){
+    rpm_pulse_buffer = 0;
+    rpm_pulse_buffer_limit_reached = true;
+  }
 }
 
 void speed_pulse_isr(){
@@ -116,25 +138,25 @@ void setup() {
   Serial.begin(115200);
   //turn the PID on
   speedGaugePID.SetMode(AUTOMATIC);
-  int i;
-  for(i=0; i<=3000; i++){
-    set_rpm_to_gauge(i);
-    delay(1);
-  }
-  delay(1000);
-  for(i=3000; i>=0; i--){
-    set_rpm_to_gauge(i);
-    delay(1);
-  }
   set_rpm_to_gauge(0);
-  speed_gauge_controller.write(150);
-  delay(2000);
-  speed_gauge_controller.write(0);
+  delay(1000);
+  int i;
+  for(i=0; i<=3000; i+=2){
+    set_rpm_to_gauge(i);
+    delay(1);
+  }
+  delay(500);
+  for(i=3000; i>=0; i-=2){
+    set_rpm_to_gauge(i);
+    delay(1);
+  }
+  //calibrate_esc();
 }
 
 void loop() {
   //SPEED GAUGE RELATED CODE
   //acquisition of the speed gauge's rotational speed
+  /*
   if (digitalRead(SPEED_GAUGE_PULSE_INPUT_PIN) == HIGH && !was_speed_gauge_pulse_pin_high){
     if (speed_gauge_pulses.isFull())  speed_gauge_pulses.pop(pop_buffer);
     speed_gauge_pulses.push(millis());
@@ -144,7 +166,7 @@ void loop() {
   }
   //controller updates
   if (last_speed_calculation + SPEED_CALCULATION_INTERVAL < millis()){
-    speed_kph_displayed_f = displayed_speed(&speed_gauge_pulses);
+    speed_kph_displayed_f = calc_displayed_speed(&speed_gauge_pulses);
     speedGaugePID.Compute();
   }
   if (last_controller_update + CONTROLLER_UPDATE_INTERVAL < millis()){
@@ -163,8 +185,24 @@ void loop() {
   if (last_speed_pulse + 300 < millis()){
     speed_to_display_f = 0.0;
   }
+  */
 
   //REV COUNTER RELATED CODE
+  if (rpm_pulse_buffer_limit_reached){
+    uint32_t rpm_pulse_period = millis() - last_rpm_pulse;
+    last_rpm_pulse = millis();
+    rpm_pulse_buffer_limit_reached = false;
+    rpm_to_display = (RPM_PULSE_BUFFER_MAX * PULSE_WITH_TO_RPM / rpm_pulse_period);
+    set_rpm_to_gauge(rpm_to_display);
+    Serial.print("RPM: ");
+    Serial.println(rpm_to_display);
+  }
+  if (last_rpm_pulse + 600 < millis()){
+    set_rpm_to_gauge(0);
+    Serial.println("RPM: 0");
+  }
+
+  /*
   if (rpm_pulse_detected){
     uint32_t engine_pulse_period = millis() - last_engine_pulse;
     last_engine_pulse = millis();
@@ -178,4 +216,5 @@ void loop() {
   if (last_engine_pulse + 300 < millis()){
     set_rpm_to_gauge(0);
   }
+  */
 }
