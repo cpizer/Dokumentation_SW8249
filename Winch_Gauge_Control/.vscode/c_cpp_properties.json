@@ -1,0 +1,64 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/include",
+                "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/src",
+                "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/PID",
+                "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/RingBuffer/src",
+                "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/RingBuf",
+                "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/Servo/src",
+                "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/include",
+                    "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/src",
+                    "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/PID",
+                    "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/RingBuffer/src",
+                    "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/RingBuf",
+                    "c:/Users/Clemens Berger/Documents/Segelflug/Winde Umbau/Dokumentation_SW8249/Winch_Gauge_Control/.pio/libdeps/Nano168/Servo/src",
+                    "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                    "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "C:/Users/Clemens Berger/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60103",
+                "ARDUINO_AVR_NANO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega168__",
+                ""
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "C:/Users/Clemens Berger/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega168",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
