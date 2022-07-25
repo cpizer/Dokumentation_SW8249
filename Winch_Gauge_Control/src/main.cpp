@@ -9,7 +9,6 @@
 #define RPM_GAUGE_PWM_PIN 5
 #define RPM_GAUGE_DIR_PIN 4
 #define RPM_PULSE_PIN 3
-#define POTI_INPUT_PIN A0
 
 #define RPM_GAUGE_MAX_PWM 50L
 #define RPM_PULSE_BUFFER_MAX 5UL
@@ -127,7 +126,6 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(SPEED_GAUGE_CONTROLLER_PIN, OUTPUT);
   pinMode(SPEED_GAUGE_PULSE_INPUT_PIN, INPUT);
-  pinMode(POTI_INPUT_PIN, INPUT);
   pinMode(RPM_GAUGE_DIR_PIN, OUTPUT);
   pinMode(RPM_GAUGE_PWM_PIN, OUTPUT);
   pinMode(RPM_PULSE_PIN, INPUT_PULLUP);
@@ -171,7 +169,6 @@ void loop() {
   }
   if (last_controller_update + CONTROLLER_UPDATE_INTERVAL < millis()){
     last_controller_update = millis();
-    //speed_to_display_f = (double) map((long) analogRead(POTI_INPUT_PIN), 0L, 1023L, 0L, 100L);
     speed_gauge_controller.write((speed_to_display_f < 10)?40:map((long) value_to_write_f, 0, 150, 40, 150));
   }
 

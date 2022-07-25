@@ -1,0 +1,221 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 62DEBC21
+P 2300 2500
+F 0 "J?" H 2408 2681 50  0000 C CNN
+F 1 "Alternator_W_terminal" H 2408 2590 50  0000 C CNN
+F 2 "" H 2300 2500 50  0001 C CNN
+F 3 "~" H 2300 2500 50  0001 C CNN
+	1    2300 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 62DECB95
+P 2300 3500
+F 0 "J?" H 2408 3681 50  0000 C CNN
+F 1 "GND" H 2408 3590 50  0000 C CNN
+F 2 "" H 2300 3500 50  0001 C CNN
+F 3 "~" H 2300 3500 50  0001 C CNN
+	1    2300 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D?
+U 1 1 62DED468
+P 3000 2500
+F 0 "D?" H 3000 2283 50  0000 C CNN
+F 1 "1N4007" H 3000 2374 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3000 2325 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3000 2500 50  0001 C CNN
+	1    3000 2500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62DF09B3
+P 3250 2750
+F 0 "R?" H 3320 2796 50  0000 L CNN
+F 1 "R4k7" H 3320 2705 50  0000 L CNN
+F 2 "" V 3180 2750 50  0001 C CNN
+F 3 "~" H 3250 2750 50  0001 C CNN
+	1    3250 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62DF0F75
+P 3500 2500
+F 0 "R?" V 3293 2500 50  0000 C CNN
+F 1 "R8k" V 3384 2500 50  0000 C CNN
+F 2 "" V 3430 2500 50  0001 C CNN
+F 3 "~" H 3500 2500 50  0001 C CNN
+	1    3500 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Variable R?
+U 1 1 62DF36DA
+P 3900 2500
+F 0 "R?" V 4165 2500 50  0000 C CNN
+F 1 "R_Variable[10k]" V 4074 2500 50  0000 C CNN
+F 2 "" V 3830 2500 50  0001 C CNN
+F 3 "~" H 3900 2500 50  0001 C CNN
+	1    3900 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 62DF4EAF
+P 4150 3000
+F 0 "C?" H 4265 3046 50  0000 L CNN
+F 1 "C10n" H 4265 2955 50  0000 L CNN
+F 2 "" H 4188 2850 50  0001 C CNN
+F 3 "~" H 4150 3000 50  0001 C CNN
+	1    4150 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BZM55Cxx D?
+U 1 1 62DF5B06
+P 4500 3250
+F 0 "D?" V 4454 3330 50  0000 L CNN
+F 1 "BZM55C2v7" V 4545 3330 50  0000 L CNN
+F 2 "Diode_SMD:D_MicroMELF" H 4500 3075 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/85597/bzm55.pdf" H 4500 3250 50  0001 C CNN
+	1    4500 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:BZM55Cxx D?
+U 1 1 62DF6683
+P 4500 2750
+F 0 "D?" V 4454 2830 50  0000 L CNN
+F 1 "BZM55C2v7" V 4545 2830 50  0000 L CNN
+F 2 "Diode_SMD:D_MicroMELF" H 4500 2575 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/85597/bzm55.pdf" H 4500 2750 50  0001 C CNN
+	1    4500 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2500 2500 2850 2500
+Wire Wire Line
+	3150 2500 3250 2500
+Wire Wire Line
+	3250 2600 3250 2500
+Connection ~ 3250 2500
+Wire Wire Line
+	3250 2500 3350 2500
+Wire Wire Line
+	3250 3100 3250 3000
+Wire Wire Line
+	2500 3500 3250 3500
+Wire Wire Line
+	3250 3500 3250 3400
+Wire Wire Line
+	3250 3500 4150 3500
+Connection ~ 3250 3500
+Wire Wire Line
+	4500 3400 4500 3500
+Connection ~ 4500 3500
+Wire Wire Line
+	4500 3500 5100 3500
+Wire Wire Line
+	4150 3150 4150 3500
+Connection ~ 4150 3500
+Wire Wire Line
+	4150 3500 4500 3500
+Wire Wire Line
+	4150 2850 4150 2500
+Wire Wire Line
+	4150 2500 4050 2500
+Wire Wire Line
+	3650 2500 3750 2500
+Wire Wire Line
+	4150 2500 4500 2500
+Wire Wire Line
+	4500 2500 4500 2600
+Connection ~ 4150 2500
+Wire Wire Line
+	4500 2900 4500 3100
+Wire Wire Line
+	4500 2500 5100 2500
+Connection ~ 4500 2500
+Wire Wire Line
+	3250 3000 3850 3000
+Wire Wire Line
+	3850 3000 3850 3600
+Connection ~ 3250 3000
+Wire Wire Line
+	3250 3000 3250 2900
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 62DF8DB9
+P 5300 2500
+F 0 "J?" H 5272 2432 50  0000 R CNN
+F 1 "Arduino_Signal" H 5272 2523 50  0000 R CNN
+F 2 "" H 5300 2500 50  0001 C CNN
+F 3 "~" H 5300 2500 50  0001 C CNN
+	1    5300 2500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 62DF96CC
+P 5300 3500
+F 0 "J?" H 5272 3432 50  0000 R CNN
+F 1 "GND" H 5272 3523 50  0000 R CNN
+F 2 "" H 5300 3500 50  0001 C CNN
+F 3 "~" H 5300 3500 50  0001 C CNN
+	1    5300 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 62DF9A8A
+P 3850 3800
+F 0 "J?" V 4004 3712 50  0000 R CNN
+F 1 "LOGO_Signal" V 3913 3712 50  0000 R CNN
+F 2 "" H 3850 3800 50  0001 C CNN
+F 3 "~" H 3850 3800 50  0001 C CNN
+	1    3850 3800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 62DFA19F
+P 3250 3500
+F 0 "#PWR0101" H 3250 3250 50  0001 C CNN
+F 1 "GND" H 3255 3327 50  0000 C CNN
+F 2 "" H 3250 3500 50  0001 C CNN
+F 3 "" H 3250 3500 50  0001 C CNN
+	1    3250 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BZM55Cxx D?
+U 1 1 62DEF58B
+P 3250 3250
+F 0 "D?" V 3204 3330 50  0000 L CNN
+F 1 "BZM55C13" V 3295 3330 50  0000 L CNN
+F 2 "Diode_SMD:D_MicroMELF" H 3250 3075 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/85597/bzm55.pdf" H 3250 3250 50  0001 C CNN
+	1    3250 3250
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC
