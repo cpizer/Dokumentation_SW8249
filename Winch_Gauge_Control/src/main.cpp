@@ -1,11 +1,13 @@
 #include <Arduino.h>
 #include <Servo.h>
-#include <RingBuf.h>
-#include <PID_v1.h>
+//#include <RingBuf.h>
+//#include <PID_v1.h>
 
-#define SPEED_GAUGE_PULSE_INPUT_PIN 7
+//#define SPEED_GAUGE_PULSE_INPUT_PIN 7
 #define SPEED_GAUGE_CONTROLLER_PIN 6
 #define SPEED_PULSE_PIN 2
+#define SPEED_GAUGE_MIN_POTI_PIN A0
+#define SPEED_GAUGE_MAX_POTI_PIN A1
 #define RPM_GAUGE_PWM_PIN 5
 #define RPM_GAUGE_DIR_PIN 4
 #define RPM_PULSE_PIN 3
@@ -21,25 +23,29 @@
 
 #define PULSE_WITH_TO_RPM 30000UL
 
-#define CONTROLLER_UPDATE_INTERVAL 20L
+//#define CONTROLLER_UPDATE_INTERVAL 20L
 #define SPEED_CALCULATION_INTERVAL 200L
-#define SPEED_OUTPUT_INTERVAL 500L
-#define SPEED_GAUGE_PULSES_INTEGRATION_TIME 500L
+#define SPEEDOMETER_UPDATE_INTERVAL 100L
+//#define SPEED_OUTPUT_INTERVAL 500L
+//#define SPEED_GAUGE_PULSES_INTEGRATION_TIME 500L
 
 //speed gauge related variables
-uint32_t last_controller_update = 0;
+//uint32_t last_controller_update = 0;
+uint32_t last_speedometer_update = 0;
+uint8_t speed_gauge_min_angle = 0;
+uint8_t speed_gauge_max_angle = 180;
 uint32_t last_speed_calculation = 0;
 
-bool was_speed_gauge_pulse_pin_high = false;
-double speed_kph_displayed_f = 0.0;
+//bool was_speed_gauge_pulse_pin_high = false;
+//double speed_kph_displayed_f = 0.0;
 double speed_to_display_f = 0.0;
 double value_to_write_f = 0.0;
 
-Servo speed_gauge_controller;
-RingBuf<uint32_t, SPEED_GAUGE_PULSES_BUFFER_SIZE> speed_gauge_pulses;
-uint32_t pop_buffer;
+Servo speed_gauge_servo;
+//RingBuf<uint32_t, SPEED_GAUGE_PULSES_BUFFER_SIZE> speed_gauge_pulses;
+//uint32_t pop_buffer;
 //                INPUT_MEASUREMENT       OUTPUT             TARGET_VALUE         kp   ki    kd
-PID speedGaugePID(&speed_kph_displayed_f, &value_to_write_f, &speed_to_display_f, 0.2, 0.55, 0.01, DIRECT);
+//PID speedGaugePID(&speed_kph_displayed_f, &value_to_write_f, &speed_to_display_f, 0.2, 0.55, 0.01, DIRECT);
 
 //rev counter related variables
 volatile uint8_t rpm_pulse_buffer = 0;
@@ -60,15 +66,16 @@ volatile bool speed_pulse_buffer_limit_reached = false;
 void calibrate_esc(void){
   Serial.println("Calibrate ESC:");
   Serial.println("Write 150deg to ESC");
-  speed_gauge_controller.write(180);
+  speed_gauge_servo.write(180);
   delay(2500);
   Serial.println("Write 40deg to ESC");
-  speed_gauge_controller.write(0);
+  speed_gauge_servo.write(0);
   delay(2000);
 }
 */
 
 //Calculates the speed, which is currently displayed by the speed gauge, based on the pulses from the light barrier
+/*
 double calc_displayed_speed(RingBuf<uint32_t, SPEED_GAUGE_PULSES_BUFFER_SIZE> *pulses_buffer){
   uint32_t diff_buffer = 0;
   uint32_t no_values_considered = 0;
@@ -90,6 +97,7 @@ double calc_displayed_speed(RingBuf<uint32_t, SPEED_GAUGE_PULSES_BUFFER_SIZE> *p
     return (double) (PULSE_WIDTH_TO_SPEED / avg_pulse_width);
   }
 }
+*/
 
 //Sets all output pins connected to the RPM-gauge that way, that the gauge displays the desired RPM
 void set_rpm_to_gauge(uint32_t rpm_to_display){
@@ -103,6 +111,10 @@ void set_rpm_to_gauge(uint32_t rpm_to_display){
     int pwm_value = map(rpm_to_display, 1500, 3000, 255, 255-RPM_GAUGE_MAX_PWM);
     analogWrite(RPM_GAUGE_PWM_PIN, pwm_value);
   }
+}
+
+void set_speed_to_gauge(int speed_kph){
+  speed_gauge_servo.write(map(speed_kph, 0, 150, speed_gauge_min_angle, speed_gauge_max_angle));
 }
 
 void rpm_pulse_isr(){
@@ -125,30 +137,56 @@ void speed_pulse_isr(){
 void setup() {
   // put your setup code here, to run once:
   pinMode(SPEED_GAUGE_CONTROLLER_PIN, OUTPUT);
-  pinMode(SPEED_GAUGE_PULSE_INPUT_PIN, INPUT);
+  pinMode(SPEED_GAUGE_MIN_POTI_PIN, INPUT);
+  pinMode(SPEED_GAUGE_MAX_POTI_PIN, INPUT);
+  //pinMode(SPEED_GAUGE_PULSE_INPUT_PIN, INPUT);
   pinMode(RPM_GAUGE_DIR_PIN, OUTPUT);
   pinMode(RPM_GAUGE_PWM_PIN, OUTPUT);
   pinMode(RPM_PULSE_PIN, INPUT_PULLUP);
   pinMode(SPEED_PULSE_PIN, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(RPM_PULSE_PIN), rpm_pulse_isr, RISING);
   attachInterrupt(digitalPinToInterrupt(SPEED_PULSE_PIN), speed_pulse_isr, RISING);
-  speed_gauge_controller.attach(SPEED_GAUGE_CONTROLLER_PIN);
+  speed_gauge_min_angle = map(analogRead(SPEED_GAUGE_MIN_POTI_PIN), 0, 1023, 0, 180);
+  speed_gauge_max_angle = map(analogRead(SPEED_GAUGE_MAX_POTI_PIN), 0, 1023, 0, 180);
+  speed_gauge_servo.attach(SPEED_GAUGE_CONTROLLER_PIN);
   Serial.begin(115200);
   //turn the PID on
-  speedGaugePID.SetMode(AUTOMATIC);
+  //speedGaugePID.SetMode(AUTOMATIC);
   set_rpm_to_gauge(0);
-  delay(1000);
+  set_speed_to_gauge(0);
+  delay(500);
   int i;
-  for(i=0; i<=3000; i+=2){
+  for(i=0; i<= 100; i+=5){
+    set_rpm_to_gauge(30*i);
+    set_speed_to_gauge((15*i)/10);
+    delay(100);
+  }
+  delay(200);
+  for(i=95; i>= 0; i-=5){
+    set_rpm_to_gauge(30*i);
+    set_speed_to_gauge((15*i)/10);
+    delay(100);
+  }
+  /*
+  for(i=0; i<=3000; i+=3){
     set_rpm_to_gauge(i);
     delay(1);
   }
   delay(500);
-  for(i=3000; i>=0; i-=2){
+  for(i=3000; i>=0; i-=3){
     set_rpm_to_gauge(i);
     delay(1);
   }
-  //calibrate_esc();
+  for(i=0; i<=150; i+=10){
+    set_speed_to_gauge(i);
+    delay(100);
+  }
+  delay(100);
+  for(i=140; i>=0; i-=10){
+    set_speed_to_gauge(i);
+    delay(100);
+  }
+  */
 }
 
 void loop() {
@@ -169,8 +207,9 @@ void loop() {
   }
   if (last_controller_update + CONTROLLER_UPDATE_INTERVAL < millis()){
     last_controller_update = millis();
-    speed_gauge_controller.write((speed_to_display_f < 10)?40:map((long) value_to_write_f, 0, 150, 40, 150));
+    speed_gauge_servo.write((speed_to_display_f < 10)?40:map((long) value_to_write_f, 0, 150, 40, 150));
   }
+  */
 
   //SPEED COUNTER RELATED CODE
   if (speed_pulse_buffer_limit_reached){
@@ -182,7 +221,11 @@ void loop() {
   if (last_speed_pulse + 300 < millis()){
     speed_to_display_f = 0.0;
   }
-  */
+
+  if (last_speedometer_update + SPEEDOMETER_UPDATE_INTERVAL < millis()){
+    last_speedometer_update = millis();
+    set_speed_to_gauge((int) speed_to_display_f);
+  }
 
   //REV COUNTER RELATED CODE
   if (rpm_pulse_buffer_limit_reached){
