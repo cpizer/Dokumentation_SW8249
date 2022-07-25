@@ -31,9 +31,9 @@ $EXTMIN
   9
 $EXTMAX
  10
-560
+282
  20
-140
+480
  30
 0
   9
@@ -67,7 +67,7 @@ $QTEXTMODE
   9
 $MIRRTEXT
  70
-    0
+    1
   9
 $LTSCALE
  40
@@ -75,27 +75,27 @@ $LTSCALE
   9
 $ATTMODE
  70
-    0
+    1
   9
 $TEXTSIZE
  40
-2.5
+6.35
   9
 $TRACEWID
  40
-15.68
+1
   9
 $TEXTSTYLE
   7
-STANDARD
+Standard
   9
 $CLAYER
   8
-Holz
+0
   9
 $CELTYPE
   6
-BYLAYER
+ByLayer
   9
 $CECOLOR
  62
@@ -111,15 +111,15 @@ $DISPSILH
   9
 $DIMSCALE
  40
-2.5
+1
   9
 $DIMASZ
  40
-2.5
+5.9944
   9
 $DIMEXO
  40
-0.625
+0
   9
 $DIMDLI
  40
@@ -135,7 +135,7 @@ $DIMDLE
   9
 $DIMEXE
  40
-1.25
+0.9906
   9
 $DIMTP
  40
@@ -147,7 +147,7 @@ $DIMTM
   9
 $DIMTXT
  40
-2.5
+6.35
   9
 $DIMCEN
  40
@@ -167,11 +167,11 @@ $DIMLIM
   9
 $DIMTIH
  70
-    0
+    1
   9
 $DIMTOH
  70
-    0
+    1
   9
 $DIMSE1
  70
@@ -187,7 +187,7 @@ $DIMTAD
   9
 $DIMZIN
  70
-    8
+    1
   9
 $DIMBLK
   1
@@ -219,7 +219,7 @@ $DIMALTD
   9
 $DIMALTF
  40
-0.03937
+0.0393700787
   9
 $DIMLFAC
  40
@@ -255,7 +255,7 @@ $DIMBLK2
   9
 $DIMSTYLE
   2
-STANDARD
+ISO-25
   9
 $DIMCLRD
  70
@@ -275,7 +275,7 @@ $DIMTFAC
   9
 $DIMGAP
  40
-0.625
+1.524
   9
 $DIMJUST
  70
@@ -295,7 +295,7 @@ $DIMTOLJ
   9
 $DIMTZIN
  70
-    8
+    1
   9
 $DIMALTZ
  70
@@ -327,7 +327,7 @@ $DIMALTTD
   9
 $DIMTXSTY
   7
-STANDARD
+Standard
   9
 $DIMAUNIT
  70
@@ -359,7 +359,7 @@ $DIMFRAC
   9
 $DIMLDRBLK
   1
-STANDARD
+
   9
 $DIMLUNIT
  70
@@ -419,7 +419,7 @@ $LUNITS
   9
 $LUPREC
  70
-    4
+    2
   9
 $SKETCHINC
  40
@@ -427,7 +427,7 @@ $SKETCHINC
   9
 $FILLETRAD
  40
-0
+10
   9
 $AUNITS
  70
@@ -491,11 +491,11 @@ $ANGDIR
   9
 $PDMODE
  70
-   34
+    0
   9
 $PDSIZE
  40
-0
+-1
   9
 $PLINEWID
  40
@@ -507,7 +507,7 @@ $SPLFRAME
   9
 $SPLINETYPE
  70
-    2
+    6
   9
 $SPLINESEGS
  70
@@ -787,23 +787,23 @@ $PLIMCHECK
   9
 $PEXTMIN
  10
-0
+1e+020
  20
-0
+1e+020
  30
-0
+1e+020
   9
 $PEXTMAX
  10
-0
+-1e+020
  20
-0
+-1e+020
  30
-0
+-1e+020
   9
 $GRIDMODE
  70
-    1
+    0
   9
 $SNAPSTYLE
  70
@@ -817,7 +817,7 @@ $PLIMMIN
   9
 $PLIMMAX
  10
-210
+420
  20
 297
   9
@@ -875,7 +875,7 @@ $JOINSTYLE
   9
 $LWDISPLAY
 290
-    0
+    1
   9
 $INSUNITS
  70
@@ -907,7 +907,7 @@ $EXTNAMES
   9
 $PSVPSCALE
  40
-1
+0
   9
 $OLESTARTUP
 290
@@ -1115,9 +1115,9 @@ AcDbViewportTableRecord
  21
 1
  12
-329.4454888710503
+-13.1187633170335
  22
-144.7721774176524
+150.7319132140788
  13
 0
  23
@@ -1143,9 +1143,9 @@ AcDbViewportTableRecord
  37
 0
  40
-371.0178745941569
+13.92195290787229
  41
-1.800675675675676
+2.096153846153846
  42
 50
  43
@@ -1167,7 +1167,7 @@ AcDbViewportTableRecord
  75
     0
  76
-    1
+    0
  77
     0
  78
@@ -2241,31 +2241,7 @@ AcDbLayerTableRecord
   6
 CONTINUOUS
 370
-    0
-390
-F
-  0
-LAYER
-  5
-4A
-330
-2
-100
-AcDbSymbolTableRecord
-100
-AcDbLayerTableRecord
-  2
-Holz
- 70
-    0
- 62
-   56
-420
-8421376
-  6
-CONTINUOUS
-370
-    9
+   -3
 390
 F
   0
@@ -2285,7 +2261,7 @@ AcDbSymbolTable
   0
 STYLE
   5
-4B
+4A
 330
 2
 100
@@ -2369,7 +2345,7 @@ ACAD
   0
 APPID
   5
-4C
+4B
 330
 9
 100
@@ -2401,7 +2377,7 @@ AcDbDimStyleTable
   0
 DIMSTYLE
 105
-4D
+4C
 330
 A
 100
@@ -2415,13 +2391,13 @@ Standard
  40
 1
  41
-2.5
+5.9944
  42
-0.625
+0
  43
 0.38
  44
-1.25
+0.9906
  45
 0
  46
@@ -2433,11 +2409,11 @@ Standard
  49
 1
 140
-2.5
+6.35
 141
 0.09
 142
-2.5
+0
 143
 25.4
 144
@@ -2447,7 +2423,7 @@ Standard
 146
 1
 147
-0.625
+1.524
 148
 0
  71
@@ -2455,7 +2431,7 @@ Standard
  72
     0
  73
-    0
+    1
  74
     1
  75
@@ -2503,7 +2479,7 @@ Standard
 277
     2
 278
-    0
+   44
 279
     0
 280
@@ -2525,7 +2501,7 @@ Standard
 289
     3
 340
-standard
+Standard
 341
 
 371
@@ -2675,25 +2651,47 @@ ENTITIES
   0
 CIRCLE
   5
+4D
+100
+AcDbEntity
+  8
+0
+  6
+CONTINUOUS
+ 62
+    7
+370
+   25
+100
+AcDbCircle
+ 10
+171
+ 20
+371.5
+ 40
+69.99999999999955
+  0
+CIRCLE
+  5
 4E
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-70
+76
  20
-70
+270
  40
-70
+11.5
   0
 CIRCLE
   5
@@ -2701,243 +2699,197 @@ CIRCLE
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-70
+151
  20
-70
+270
  40
-7.5
+11.5
   0
-LWPOLYLINE
+CIRCLE
   5
 50
 100
 AcDbEntity
   8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbPolyline
- 90
-    4
- 70
-    1
- 43
 0
+  6
+CONTINUOUS
+ 62
+    7
+370
+   25
+100
+AcDbCircle
  10
-179.5
+191
  20
-60
- 10
-220
- 20
-60
- 10
-220
- 20
-80
- 10
-179.5
- 20
-80
+225
+ 40
+11.5
   0
-ARC
+CIRCLE
   5
 51
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-153.4314575050762
+226
  20
-127.2756492761104
+270
  40
-9.5
-100
-AcDbArc
- 50
-45
- 51
-135
+11.5
   0
-LINE
+CIRCLE
   5
 52
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-146.0068363026174
+226
  20
-133.286056916196
- 11
-146.713943083804
- 21
-133.9931636973826
+225
+ 40
+11.50000000000006
   0
-ARC
+CIRCLE
   5
 53
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-152.7243507238896
+151
  20
-126.5685424949238
- 40
-9.5
-100
-AcDbArc
- 50
-135
- 51
 225
+ 40
+11.2500000000002
   0
-LINE
+CIRCLE
   5
 54
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-162.5733614381107
+111
  20
-131.5687741856203
- 11
-160.1489719263484
- 21
-133.9931636973826
+165
+ 40
+26.00000000000006
   0
-ARC
+CIRCLE
   5
 55
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-169.2908758593829
+171
  20
-138.2862886068925
+165
  40
-9.5
-100
-AcDbArc
- 50
-225.0000000000001
- 51
-300.8014401249571
+25.99999999999991
   0
-LINE
+CIRCLE
   5
 56
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-148.4312258143797
+231
  20
-117.4266385618894
- 11
-146.0068363026174
- 21
-119.8510280736516
+165
+ 40
+25.00000000000003
   0
-ARC
+CIRCLE
   5
 57
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-141.7137113931075
+61
  20
-110.7091241406171
+330
  40
-9.5
-100
-AcDbArc
- 50
-329.1985598750429
- 51
-44.99999999999994
+28.49999999999983
   0
 CIRCLE
   5
@@ -2945,205 +2897,175 @@ CIRCLE
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-153.4314575050762
+111
  20
-126.5685424949238
+225
  40
-2.5
+11.50000000000006
   0
-ARC
+CIRCLE
   5
 59
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-267.2756492761104
+76
  20
-126.5685424949238
+225
  40
-9.5
-100
-AcDbArc
- 50
-315
- 51
-45
+11.50000000000006
   0
-LINE
+CIRCLE
   5
 5A
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-273.286056916196
+41
  20
-133.9931636973826
- 11
-273.9931636973826
- 21
-133.286056916196
+225
+ 40
+11.50000000000009
   0
-ARC
+CIRCLE
   5
 5B
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-266.5685424949238
+51
  20
-127.2756492761104
+165
  40
-9.5
-100
-AcDbArc
- 50
-45
- 51
-134.9999999999999
+26
   0
-LINE
+CIRCLE
   5
 5C
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-271.5687741856203
+10
  20
-117.4266385618893
- 11
-273.9931636973826
- 21
-119.8510280736516
+450
+ 40
+2.25
   0
-ARC
+CIRCLE
   5
 5D
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-278.2862886068925
+10
  20
-110.7091241406171
+30
  40
-9.5
-100
-AcDbArc
- 50
-135.0000000000001
- 51
-210.8014401249571
+2.250000000000004
   0
-LINE
+CIRCLE
   5
 5E
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-257.4266385618894
+10
  20
-131.5687741856203
- 11
-259.8510280736516
- 21
-133.9931636973826
+135
+ 40
+2.249999999999972
   0
-ARC
+CIRCLE
   5
 5F
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-250.7091241406172
+10
  20
-138.2862886068925
+240
  40
-9.5
-100
-AcDbArc
- 50
-239.1985598750429
- 51
-314.9999999999999
+2.25
   0
 CIRCLE
   5
@@ -3151,205 +3073,175 @@ CIRCLE
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-266.5685424949238
+10
  20
-126.5685424949238
+345
  40
-2.5
+2.249999999999943
   0
-ARC
+CIRCLE
   5
 61
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-266.5685424949238
+272
  20
-12.72435072388962
+30
  40
-9.5
-100
-AcDbArc
- 50
-225.0000000000001
- 51
-314.9999999999999
+2.250000000000014
   0
-LINE
+CIRCLE
   5
 62
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-273.9931636973826
+272
  20
-6.713943083803974
- 11
-273.286056916196
- 21
-6.006836302617421
+135
+ 40
+2.249999999999972
   0
-ARC
+CIRCLE
   5
 63
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-267.2756492761104
+272
  20
-13.43145750507617
+240
  40
-9.5
-100
-AcDbArc
- 50
-314.9999999999999
- 51
-45.00000000000005
+2.25
   0
-LINE
+CIRCLE
   5
 64
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-257.4266385618893
+272
  20
-8.431225814379683
- 11
-259.8510280736516
- 21
-6.006836302617425
+345
+ 40
+2.250000000000057
   0
-ARC
+CIRCLE
   5
 65
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-250.7091241406171
+272
  20
-1.713711393107459
+450
  40
-9.5
-100
-AcDbArc
- 50
-45.00000000000015
- 51
-120.8014401249571
+2.250000000000057
   0
-LINE
+CIRCLE
   5
 66
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbLine
+AcDbCircle
  10
-271.5687741856203
+84.68807716969999
  20
-22.57336143811062
- 11
-273.9931636973826
- 21
-20.14897192634837
+353.6880771697
+ 40
+1.999999999999943
   0
-ARC
+CIRCLE
   5
 67
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-278.2862886068925
+84.68807716969999
  20
-29.29087585938282
+306.3119228303
  40
-9.5
-100
-AcDbArc
- 50
-149.1985598750429
- 51
-224.9999999999999
+2
   0
 CIRCLE
   5
@@ -3357,49 +3249,43 @@ CIRCLE
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-266.5685424949238
+37.3119228302
  20
-13.43145750507617
+306.3119228303
  40
-2.5
+1.999999999999943
   0
-ARC
+CIRCLE
   5
 69
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbCircle
  10
-152.7243507238896
+37.3119228303
  20
-13.43145750507622
+353.6880771697
  40
-9.5
-100
-AcDbArc
- 50
-134.9999999999999
- 51
-225.0000000000001
+2
   0
 LINE
   5
@@ -3407,51 +3293,47 @@ LINE
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbLine
  10
-146.713943083804
+282
  20
-6.006836302617478
+480
  11
-146.0068363026174
+0
  21
-6.713943083804033
+480
   0
-ARC
+LINE
   5
 6B
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbCircle
+AcDbLine
  10
-153.4314575050762
+282
  20
-12.72435072388967
- 40
-9.5
-100
-AcDbArc
- 50
-225.0000000000001
- 51
-314.9999999999999
+0
+ 11
+282
+ 21
+480
   0
 LINE
   5
@@ -3459,1065 +3341,47 @@ LINE
 100
 AcDbEntity
   8
-Holz
+0
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
 AcDbLine
  10
-148.4312258143797
+0
  20
-22.57336143811069
+0
  11
-146.0068363026174
+282
  21
-20.14897192634843
+0
   0
-ARC
+LINE
   5
 6D
 100
 AcDbEntity
   8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-141.7137113931074
- 20
-29.29087585938289
- 40
-9.5
-100
-AcDbArc
- 50
-315.0000000000002
- 51
-30.80144012495714
-  0
-LINE
-  5
-6E
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-162.5733614381106
- 20
-8.431225814379728
- 11
-160.1489719263484
- 21
-6.006836302617471
-  0
-ARC
-  5
-6F
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-169.2908758593828
- 20
-1.713711393107502
- 40
-9.5
-100
-AcDbArc
- 50
-59.19855987504297
- 51
-134.9999999999999
-  0
-CIRCLE
-  5
-70
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-153.4314575050762
- 20
-13.43145750507622
- 40
-2.5
-  0
-ARC
-  5
-71
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-210
- 20
-70
- 40
-69.99999999999997
-100
-AcDbArc
- 50
-59.19855987504275
- 51
-120.8014401249572
-  0
-ARC
-  5
-72
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-210
- 20
-70
- 40
-69.99999999999997
-100
-AcDbArc
- 50
-329.1985598750427
- 51
-30.80144012495724
-  0
-ARC
-  5
-73
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-210
- 20
-70
- 40
-69.99999999999997
-100
-AcDbArc
- 50
-239.1985598750428
- 51
-300.8014401249573
-  0
-ARC
-  5
-74
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-210
- 20
-70
- 40
-69.99999999999997
-100
-AcDbArc
- 50
-149.1985598750428
- 51
-210.8014401249573
-  0
-CIRCLE
-  5
-75
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-130
- 20
-130
- 40
-10
-  0
-CIRCLE
-  5
-76
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-130
- 20
-10
- 40
-10
-  0
-CIRCLE
-  5
-77
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-10
- 20
-10
- 40
-10
-  0
-CIRCLE
-  5
-78
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-10
- 20
-130
- 40
-10
-  0
-CIRCLE
-  5
-79
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-10
- 20
-130
- 40
-2.5
-  0
-CIRCLE
-  5
-7A
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-10
- 20
-10
- 40
-2.5
-  0
-CIRCLE
-  5
-7B
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-130
- 20
-10
- 40
-2.5
-  0
-CIRCLE
-  5
-7C
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-130
- 20
-130
- 40
-2.5
-  0
-CIRCLE
-  5
-7D
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-350
- 20
-70
- 40
-70
-  0
-CIRCLE
-  5
-7E
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-350
- 20
-70
- 40
-65
-  0
-LINE
-  5
-7F
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-372.9440531887331
- 20
-116
- 11
-380.8321595661992
- 21
-69.33333333333334
-  0
-LINE
-  5
-80
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-361.1118936225338
- 20
-69.33333333333334
- 11
-369
- 21
-116
-  0
-ARC
-  5
-81
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-370.9720265943665
- 20
-115.6666666666667
- 40
-2
-100
-AcDbArc
- 50
-9.594115496585959
- 51
-170.4058845034143
-  0
-ARC
-  5
-82
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-370.9720265943665
- 20
-67.66666666666667
- 40
-10
-100
-AcDbArc
- 50
-170.4059317731395
- 51
-9.594068226860498
-  0
-LINE
-  5
-83
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-370
- 20
-45
- 11
-329.5
- 21
-45
-  0
-LINE
-  5
-84
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-370
- 20
-25
- 11
-329.5
- 21
-25
-  0
-LINE
-  5
-85
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-329.5
- 20
-45
- 11
-329.5
- 21
-25
-  0
-LINE
-  5
-86
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-370
- 20
-45
- 11
-370
- 21
-25
-  0
-LINE
-  5
-87
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-319.6005050633883
- 20
-15.10050506338834
- 11
-379.8994949366117
- 21
-15.10050506338833
-  0
-LINE
-  5
-88
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-379.8994949366117
- 20
-15.10050506338833
- 11
-379.8994949366117
- 21
-54.89949493661166
-  0
-LINE
-  5
-89
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-379.8994949366117
- 20
-54.89949493661166
- 11
-319.6005050633883
- 21
-54.89949493661167
-  0
-LINE
-  5
-8A
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-319.6005050633883
- 20
-54.89949493661167
- 11
-319.6005050633883
- 21
-15.10050506338834
-  0
-CIRCLE
-  5
-8B
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-325
- 20
-29.75
- 40
-1
-  0
-CIRCLE
-  5
-8C
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-325
- 20
-40.25
- 40
-1
-  0
-CIRCLE
-  5
-8D
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-375
- 20
-40.25
- 40
-1
-  0
-CIRCLE
-  5
-8E
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-375
- 20
-29.75
- 40
-1
-  0
-LWPOLYLINE
-  5
-8F
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbPolyline
- 90
-    4
- 70
-    1
- 43
 0
- 10
-370
- 20
-36
- 10
-370
- 20
-36
- 10
-370
- 20
-36
- 10
-370
- 20
-36
-  0
-LWPOLYLINE
-  5
-90
-100
-AcDbEntity
-  8
-Holz
   6
-ByLayer
+CONTINUOUS
  62
-  256
+    7
 370
-   -1
+   25
 100
-AcDbPolyline
- 90
-    4
- 70
-    1
- 43
+AcDbLine
+ 10
 0
- 10
-370
  20
-36
- 10
-375
- 20
-36
- 10
-375
- 20
-34
- 10
-370
- 20
-34
-  0
-LWPOLYLINE
-  5
-91
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbPolyline
- 90
-    4
- 70
-    1
- 43
+480
+ 11
 0
- 10
-329.5
- 20
-36
- 10
-325
- 20
-36
- 10
-325
- 20
-34
- 10
-329.5
- 20
-34
-  0
-CIRCLE
-  5
-92
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-370.9720265943665
- 20
-67.66666666666667
- 40
-3
-  0
-CIRCLE
-  5
-93
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-337.15
- 20
-70
- 40
-7
-  0
-CIRCLE
-  5
-94
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-337.15
- 20
-70
- 40
-2.85
-  0
-CIRCLE
-  5
-95
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-490
- 20
-70
- 40
-70
-  0
-CIRCLE
-  5
-96
-100
-AcDbEntity
-  8
-Holz
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbCircle
- 10
-490
- 20
-70
- 40
-65
+ 21
+0
   0
 ENDSEC
   0
