@@ -21,17 +21,19 @@
 #define SPEED_GAUGE_PULSES_BUFFER_SIZE 10
 #define PULSE_WIDTH_TO_SPEED 1873500L
 
-#define PULSE_WITH_TO_RPM 30000UL
+#define PULSE_WITH_TO_RPM 3000UL
 
 //#define CONTROLLER_UPDATE_INTERVAL 20L
 #define SPEED_CALCULATION_INTERVAL 200L
 #define SPEEDOMETER_UPDATE_INTERVAL 100L
+#define SPEEDOMETER_SPEED_CHANGE_LIMIT 7
 //#define SPEED_OUTPUT_INTERVAL 500L
 //#define SPEED_GAUGE_PULSES_INTEGRATION_TIME 500L
 
 //speed gauge related variables
 //uint32_t last_controller_update = 0;
 uint32_t last_speedometer_update = 0;
+int last_servo_angle = 0;
 uint8_t speed_gauge_min_angle = 0;
 uint8_t speed_gauge_max_angle = 180;
 uint32_t last_speed_calculation = 0;
@@ -114,7 +116,21 @@ void set_rpm_to_gauge(uint32_t rpm_to_display){
 }
 
 void set_speed_to_gauge(int speed_kph){
-  speed_gauge_servo.write(map(speed_kph, 0, 150, speed_gauge_min_angle, speed_gauge_max_angle));
+  if (last_speedometer_update + SPEEDOMETER_UPDATE_INTERVAL <= millis()){
+    last_speedometer_update = millis();
+    int desired_angle = map(speed_kph, 0, 150, speed_gauge_min_angle, speed_gauge_max_angle);
+    //limit the servo's speed if required
+    if (abs(desired_angle-last_servo_angle) > SPEEDOMETER_SPEED_CHANGE_LIMIT){
+      if (desired_angle > last_servo_angle){
+        last_servo_angle += SPEEDOMETER_SPEED_CHANGE_LIMIT;
+      }else{
+        last_servo_angle -= SPEEDOMETER_SPEED_CHANGE_LIMIT;
+      }
+    }else{
+      last_servo_angle = desired_angle;
+    }
+    speed_gauge_servo.write(last_servo_angle);
+  }
 }
 
 void rpm_pulse_isr(){
@@ -153,16 +169,18 @@ void setup() {
   //turn the PID on
   //speedGaugePID.SetMode(AUTOMATIC);
   set_rpm_to_gauge(0);
-  set_speed_to_gauge(0);
-  delay(500);
   int i;
+  for (i=0; i<5; i++){
+    set_speed_to_gauge(0);
+    delay(100);
+  }
   for(i=0; i<= 100; i+=5){
     set_rpm_to_gauge(30*i);
     set_speed_to_gauge((15*i)/10);
     delay(100);
   }
   delay(200);
-  for(i=95; i>= 0; i-=5){
+  for(i=100; i>= 0; i-=5){
     set_rpm_to_gauge(30*i);
     set_speed_to_gauge((15*i)/10);
     delay(100);
@@ -221,11 +239,7 @@ void loop() {
   if (last_speed_pulse + 300 < millis()){
     speed_to_display_f = 0.0;
   }
-
-  if (last_speedometer_update + SPEEDOMETER_UPDATE_INTERVAL < millis()){
-    last_speedometer_update = millis();
-    set_speed_to_gauge((int) speed_to_display_f);
-  }
+  set_speed_to_gauge((int) speed_to_display_f);
 
   //REV COUNTER RELATED CODE
   if (rpm_pulse_buffer_limit_reached){

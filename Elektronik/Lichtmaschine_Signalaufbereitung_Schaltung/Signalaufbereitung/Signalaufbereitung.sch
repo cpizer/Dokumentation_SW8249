@@ -80,17 +80,6 @@ F 3 "~" H 3900 2500 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C?
-U 1 1 62DF4EAF
-P 4150 3000
-F 0 "C?" H 4265 3046 50  0000 L CNN
-F 1 "C10n" H 4265 2955 50  0000 L CNN
-F 2 "" H 4188 2850 50  0001 C CNN
-F 3 "~" H 4150 3000 50  0001 C CNN
-	1    4150 3000
-	1    0    0    -1  
-$EndComp
-$Comp
 L Diode:BZM55Cxx D?
 U 1 1 62DF5B06
 P 4500 3250
@@ -127,8 +116,6 @@ Wire Wire Line
 	2500 3500 3250 3500
 Wire Wire Line
 	3250 3500 3250 3400
-Wire Wire Line
-	3250 3500 4150 3500
 Connection ~ 3250 3500
 Wire Wire Line
 	4500 3400 4500 3500
@@ -136,21 +123,9 @@ Connection ~ 4500 3500
 Wire Wire Line
 	4500 3500 5100 3500
 Wire Wire Line
-	4150 3150 4150 3500
-Connection ~ 4150 3500
-Wire Wire Line
-	4150 3500 4500 3500
-Wire Wire Line
-	4150 2850 4150 2500
-Wire Wire Line
-	4150 2500 4050 2500
-Wire Wire Line
 	3650 2500 3750 2500
 Wire Wire Line
-	4150 2500 4500 2500
-Wire Wire Line
 	4500 2500 4500 2600
-Connection ~ 4150 2500
 Wire Wire Line
 	4500 2900 4500 3100
 Wire Wire Line
@@ -218,4 +193,8 @@ F 3 "http://www.vishay.com/docs/85597/bzm55.pdf" H 3250 3250 50  0001 C CNN
 	1    3250 3250
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	4050 2500 4500 2500
+Wire Wire Line
+	3250 3500 4500 3500
 $EndSCHEMATC
