@@ -1,7 +1,7 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A3 16535 11693
 encoding utf-8
 Sheet 1 1
 Title ""
@@ -277,159 +277,21 @@ Wire Wire Line
 Wire Wire Line
 	4600 500  5700 500 
 Wire Wire Line
-	5700 500  5700 2350
+	5700 500  5700 2100
 Wire Wire Line
 	5700 3700 5400 3700
 Text Notes 4950 4350 0    50   ~ 0
 5V-Out\nOpAmp
 Text Notes 4950 2350 0    50   ~ 0
 24V-Out\nOpAmp
-$Comp
-L Connector:Screw_Terminal_01x03 J?
-U 1 1 63429B53
-P 8150 1200
-F 0 "J?" H 8230 1242 50  0000 L CNN
-F 1 "Screw_Terminal_01x03" H 8230 1151 50  0000 L CNN
-F 2 "" H 8150 1200 50  0001 C CNN
-F 3 "~" H 8150 1200 50  0001 C CNN
-	1    8150 1200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	5400 1100 7950 1100
-Wire Wire Line
-	5400 1700 5750 1700
-Wire Wire Line
-	5750 1700 5750 1200
-Wire Wire Line
-	5750 1200 7950 1200
-$Comp
-L power:GND #PWR?
-U 1 1 6342D1B7
-P 7950 1300
-F 0 "#PWR?" H 7950 1050 50  0001 C CNN
-F 1 "GND" H 7955 1127 50  0000 C CNN
-F 2 "" H 7950 1300 50  0001 C CNN
-F 3 "" H 7950 1300 50  0001 C CNN
-	1    7950 1300
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 634336AF
-P 8200 2050
-F 0 "J?" H 8172 1982 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 2073 50  0000 R CNN
-F 2 "" H 8200 2050 50  0001 C CNN
-F 3 "~" H 8200 2050 50  0001 C CNN
-	1    8200 2050
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 63434368
-P 8200 2200
-F 0 "J?" H 8172 2132 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 2223 50  0000 R CNN
-F 2 "" H 8200 2200 50  0001 C CNN
-F 3 "~" H 8200 2200 50  0001 C CNN
-	1    8200 2200
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 634347F4
-P 8200 2350
-F 0 "J?" H 8172 2282 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 2373 50  0000 R CNN
-F 2 "" H 8200 2350 50  0001 C CNN
-F 3 "~" H 8200 2350 50  0001 C CNN
-	1    8200 2350
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 63434E46
-P 8200 2500
-F 0 "J?" H 8172 2432 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 2523 50  0000 R CNN
-F 2 "" H 8200 2500 50  0001 C CNN
-F 3 "~" H 8200 2500 50  0001 C CNN
-	1    8200 2500
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 63435092
-P 8200 2650
-F 0 "J?" H 8172 2582 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 2673 50  0000 R CNN
-F 2 "" H 8200 2650 50  0001 C CNN
-F 3 "~" H 8200 2650 50  0001 C CNN
-	1    8200 2650
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 63435409
-P 8200 2800
-F 0 "J?" H 8172 2732 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 2823 50  0000 R CNN
-F 2 "" H 8200 2800 50  0001 C CNN
-F 3 "~" H 8200 2800 50  0001 C CNN
-	1    8200 2800
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 634355C3
-P 8200 2950
-F 0 "J?" H 8172 2882 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 2973 50  0000 R CNN
-F 2 "" H 8200 2950 50  0001 C CNN
-F 3 "~" H 8200 2950 50  0001 C CNN
-	1    8200 2950
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J?
-U 1 1 63435818
-P 8200 3100
-F 0 "J?" H 8172 3032 50  0000 R CNN
-F 1 "Conn_01x01_Male" H 8172 3123 50  0000 R CNN
-F 2 "" H 8200 3100 50  0001 C CNN
-F 3 "~" H 8200 3100 50  0001 C CNN
-	1    8200 3100
-	-1   0    0    1   
-$EndComp
+	5400 1100 6900 1100
 Wire Wire Line
 	5450 4550 6500 4550
-Wire Wire Line
-	7450 4550 7450 3100
-Wire Wire Line
-	7450 3100 8000 3100
 Connection ~ 5450 4550
-$Comp
-L power:GND #PWR?
-U 1 1 63436912
-P 8000 2050
-F 0 "#PWR?" H 8000 1800 50  0001 C CNN
-F 1 "GND" H 8005 1877 50  0000 C CNN
-F 2 "" H 8000 2050 50  0001 C CNN
-F 3 "" H 8000 2050 50  0001 C CNN
-	1    8000 2050
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8000 2200 5650 2200
 Connection ~ 5650 2200
 Wire Wire Line
 	5650 2200 5650 550 
-Wire Wire Line
-	8000 2350 5700 2350
-Connection ~ 5700 2350
-Wire Wire Line
-	5700 2350 5700 3700
 $Comp
 L Amplifier_Operational:LM358 U?
 U 1 1 63492338
@@ -532,9 +394,6 @@ Wire Wire Line
 	5400 7600 6500 7600
 Wire Wire Line
 	6500 7600 6500 6100
-Connection ~ 6500 4550
-Wire Wire Line
-	6500 4550 7450 4550
 Wire Wire Line
 	5400 6100 6500 6100
 Connection ~ 6500 6100
@@ -632,33 +491,11 @@ Wire Wire Line
 	4750 7400 4750 7250
 Wire Wire Line
 	4750 7250 4800 7250
-Wire Wire Line
-	5450 5150 5800 5150
-Wire Wire Line
-	5800 5150 5800 2500
-Wire Wire Line
-	5800 2500 8000 2500
 Connection ~ 5450 5150
-Wire Wire Line
-	5450 5700 5850 5700
-Wire Wire Line
-	5850 5700 5850 2650
-Wire Wire Line
-	5850 2650 8000 2650
 Connection ~ 5450 5700
-Wire Wire Line
-	5450 6600 5900 6600
-Wire Wire Line
-	5900 6600 5900 2800
-Wire Wire Line
-	5900 2800 8000 2800
 Connection ~ 5450 6600
 Wire Wire Line
 	5450 7150 5950 7150
-Wire Wire Line
-	5950 7150 5950 2950
-Wire Wire Line
-	5950 2950 8000 2950
 Connection ~ 5450 7150
 $Comp
 L power:GND #PWR?
@@ -749,21 +586,9 @@ Wire Wire Line
 Wire Wire Line
 	1850 1050 3250 1050
 Wire Wire Line
-	1650 2950 4750 2950
-Wire Wire Line
-	4750 2950 4750 3000
-Wire Wire Line
-	4750 3000 4800 3000
-Wire Wire Line
 	1650 3150 3150 3150
 Wire Wire Line
 	3150 3150 3150 3000
-Wire Wire Line
-	3150 3000 4700 3000
-Wire Wire Line
-	4700 3000 4700 3600
-Wire Wire Line
-	4700 3600 4800 3600
 Wire Wire Line
 	1650 2850 2250 2850
 Wire Wire Line
@@ -785,4 +610,131 @@ Wire Wire Line
 NoConn ~ 3800 6900
 Wire Wire Line
 	3800 6900 4300 6900
+$Comp
+L Connector:DB9_Female J?
+U 1 1 63636093
+P 1350 9000
+F 0 "J?" H 1268 8308 50  0000 C CNN
+F 1 "DB9_Female" H 1268 8399 50  0000 C CNN
+F 2 "" H 1350 9000 50  0001 C CNN
+F 3 " ~" H 1350 9000 50  0001 C CNN
+	1    1350 9000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 63639BB3
+P 2250 2650
+F 0 "#PWR?" H 2250 2400 50  0001 C CNN
+F 1 "GND" H 2255 2477 50  0000 C CNN
+F 2 "" H 2250 2650 50  0001 C CNN
+F 3 "" H 2250 2650 50  0001 C CNN
+	1    2250 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L MCU_Module:Arduino_UNO_R3 A?
+U 1 1 6363B884
+P 13050 2500
+F 0 "A?" H 13050 3681 50  0000 C CNN
+F 1 "Arduino_UNO_R3" H 13050 3590 50  0000 C CNN
+F 2 "Module:Arduino_UNO_R3" H 13050 2500 50  0001 C CIN
+F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 13050 2500 50  0001 C CNN
+	1    13050 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12550 2100 5700 2100
+Connection ~ 5700 2100
+Wire Wire Line
+	5650 2200 12550 2200
+Wire Wire Line
+	1650 8800 10700 8800
+Wire Wire Line
+	10700 8800 10700 2300
+Wire Wire Line
+	10700 2300 12550 2300
+Wire Wire Line
+	1650 8900 10800 8900
+Wire Wire Line
+	10800 8900 10800 2400
+Wire Wire Line
+	10800 2400 12550 2400
+Wire Wire Line
+	1650 9100 10900 9100
+Wire Wire Line
+	10900 9100 10900 2500
+Wire Wire Line
+	10900 2500 12550 2500
+Wire Wire Line
+	1650 9400 1850 9400
+Wire Wire Line
+	2950 9400 2950 4550
+Connection ~ 2950 4550
+Wire Wire Line
+	1650 9300 1850 9300
+Wire Wire Line
+	1850 9300 1850 9400
+Connection ~ 1850 9400
+Wire Wire Line
+	1850 9400 2950 9400
+Wire Wire Line
+	1650 8600 1850 8600
+Wire Wire Line
+	1650 8700 1850 8700
+Wire Wire Line
+	1850 8700 1850 8600
+Connection ~ 1850 8600
+Wire Wire Line
+	1850 8600 2000 8600
+$Comp
+L power:GND #PWR?
+U 1 1 63671D1E
+P 2000 8600
+F 0 "#PWR?" H 2000 8350 50  0001 C CNN
+F 1 "GND" H 2005 8427 50  0000 C CNN
+F 2 "" H 2000 8600 50  0001 C CNN
+F 3 "" H 2000 8600 50  0001 C CNN
+	1    2000 8600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1650 9200 6900 9200
+Wire Wire Line
+	6900 9200 6900 1100
+Wire Wire Line
+	1650 9000 6800 9000
+Wire Wire Line
+	6800 9000 6800 1700
+Wire Wire Line
+	5400 1700 6800 1700
+Wire Wire Line
+	5700 2100 5700 3700
+NoConn ~ 5950 7150
+Wire Wire Line
+	3150 3000 4800 3000
+Wire Wire Line
+	4600 3600 4600 2950
+Wire Wire Line
+	4600 2950 1650 2950
+Wire Wire Line
+	4600 3600 4800 3600
+Wire Wire Line
+	13950 5150 13950 2500
+Wire Wire Line
+	13950 2500 13550 2500
+Wire Wire Line
+	5450 5150 13950 5150
+Wire Wire Line
+	14050 5700 14050 2600
+Wire Wire Line
+	14050 2600 13550 2600
+Wire Wire Line
+	5450 5700 14050 5700
+Wire Wire Line
+	14150 6600 14150 2700
+Wire Wire Line
+	14150 2700 13550 2700
+Wire Wire Line
+	5450 6600 14150 6600
 $EndSCHEMATC
