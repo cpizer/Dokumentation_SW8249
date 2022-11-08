@@ -25,7 +25,7 @@
 
 //#define CONTROLLER_UPDATE_INTERVAL 20L
 #define SPEED_CALCULATION_INTERVAL 200L
-#define SPEEDOMETER_UPDATE_INTERVAL 100L
+#define SPEEDOMETER_UPDATE_INTERVAL 50L
 #define SPEEDOMETER_SPEED_CHANGE_LIMIT 7
 //#define SPEED_OUTPUT_INTERVAL 500L
 //#define SPEED_GAUGE_PULSES_INTEGRATION_TIME 500L
@@ -34,8 +34,8 @@
 //uint32_t last_controller_update = 0;
 uint32_t last_speedometer_update = 0;
 int last_servo_angle = 0;
-uint8_t speed_gauge_min_angle = 0;
-uint8_t speed_gauge_max_angle = 180;
+uint8_t speed_gauge_min_angle = 143;
+uint8_t speed_gauge_max_angle = 14;
 uint32_t last_speed_calculation = 0;
 
 //bool was_speed_gauge_pulse_pin_high = false;
@@ -162,73 +162,32 @@ void setup() {
   pinMode(SPEED_PULSE_PIN, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(RPM_PULSE_PIN), rpm_pulse_isr, RISING);
   attachInterrupt(digitalPinToInterrupt(SPEED_PULSE_PIN), speed_pulse_isr, RISING);
-  speed_gauge_min_angle = map(analogRead(SPEED_GAUGE_MIN_POTI_PIN), 0, 1023, 0, 180);
-  speed_gauge_max_angle = map(analogRead(SPEED_GAUGE_MAX_POTI_PIN), 0, 1023, 0, 180);
+  //speed_gauge_min_angle = map(analogRead(SPEED_GAUGE_MIN_POTI_PIN), 0, 1023, 0, 180);
+  //speed_gauge_max_angle = map(analogRead(SPEED_GAUGE_MAX_POTI_PIN), 0, 1023, 0, 180);
   speed_gauge_servo.attach(SPEED_GAUGE_CONTROLLER_PIN);
   Serial.begin(115200);
   //turn the PID on
   //speedGaugePID.SetMode(AUTOMATIC);
   set_rpm_to_gauge(0);
   int i;
-  for (i=0; i<5; i++){
+  for (i=0; i<10; i++){
     set_speed_to_gauge(0);
-    delay(100);
+    delay(50);
   }
-  for(i=0; i<= 100; i+=5){
+  for(i=0; i<= 100; i+=3){
     set_rpm_to_gauge(30*i);
-    set_speed_to_gauge((15*i)/10);
-    delay(100);
-  }
-  delay(200);
-  for(i=100; i>= 0; i-=5){
-    set_rpm_to_gauge(30*i);
-    set_speed_to_gauge((15*i)/10);
-    delay(100);
-  }
-  /*
-  for(i=0; i<=3000; i+=3){
-    set_rpm_to_gauge(i);
-    delay(1);
-  }
-  delay(500);
-  for(i=3000; i>=0; i-=3){
-    set_rpm_to_gauge(i);
-    delay(1);
-  }
-  for(i=0; i<=150; i+=10){
-    set_speed_to_gauge(i);
-    delay(100);
+    set_speed_to_gauge(150);
+    delay(50);
   }
   delay(100);
-  for(i=140; i>=0; i-=10){
-    set_speed_to_gauge(i);
-    delay(100);
+  for(i=100; i>= 0; i-=3){
+    set_rpm_to_gauge(30*i);
+    set_speed_to_gauge(0);
+    delay(50);
   }
-  */
 }
 
 void loop() {
-  //SPEED GAUGE RELATED CODE
-  //acquisition of the speed gauge's rotational speed
-  /*
-  if (digitalRead(SPEED_GAUGE_PULSE_INPUT_PIN) == HIGH && !was_speed_gauge_pulse_pin_high){
-    if (speed_gauge_pulses.isFull())  speed_gauge_pulses.pop(pop_buffer);
-    speed_gauge_pulses.push(millis());
-    was_speed_gauge_pulse_pin_high = true;
-  }else if(digitalRead(SPEED_GAUGE_PULSE_INPUT_PIN) == LOW){
-    was_speed_gauge_pulse_pin_high = false;
-  }
-  //controller updates
-  if (last_speed_calculation + SPEED_CALCULATION_INTERVAL < millis()){
-    speed_kph_displayed_f = calc_displayed_speed(&speed_gauge_pulses);
-    speedGaugePID.Compute();
-  }
-  if (last_controller_update + CONTROLLER_UPDATE_INTERVAL < millis()){
-    last_controller_update = millis();
-    speed_gauge_servo.write((speed_to_display_f < 10)?40:map((long) value_to_write_f, 0, 150, 40, 150));
-  }
-  */
-
   //SPEED COUNTER RELATED CODE
   if (speed_pulse_buffer_limit_reached){
     uint32_t speed_pulse_period = millis() - last_speed_pulse;
