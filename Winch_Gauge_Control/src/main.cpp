@@ -25,7 +25,7 @@
 
 //#define CONTROLLER_UPDATE_INTERVAL 20L
 #define SPEED_CALCULATION_INTERVAL 200L
-#define SPEEDOMETER_UPDATE_INTERVAL 50L
+#define SPEEDOMETER_UPDATE_INTERVAL 20L
 #define SPEEDOMETER_SPEED_CHANGE_LIMIT 7
 //#define SPEED_OUTPUT_INTERVAL 500L
 //#define SPEED_GAUGE_PULSES_INTEGRATION_TIME 500L
@@ -170,20 +170,20 @@ void setup() {
   //speedGaugePID.SetMode(AUTOMATIC);
   set_rpm_to_gauge(0);
   int i;
-  for (i=0; i<10; i++){
+  for (i=0; i<50; i++){
     set_speed_to_gauge(0);
-    delay(50);
+    delay(SPEEDOMETER_UPDATE_INTERVAL);
   }
-  for(i=0; i<= 100; i+=3){
+  for(i=0; i<= 100; i++){
     set_rpm_to_gauge(30*i);
     set_speed_to_gauge(150);
-    delay(50);
+    delay(SPEEDOMETER_UPDATE_INTERVAL);
   }
   delay(100);
-  for(i=100; i>= 0; i-=3){
+  for(i=100; i>= 0; i--){
     set_rpm_to_gauge(30*i);
     set_speed_to_gauge(0);
-    delay(50);
+    delay(SPEEDOMETER_UPDATE_INTERVAL);
   }
 }
 
