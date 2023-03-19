@@ -93,7 +93,7 @@ $EndComp
 Wire Wire Line
 	2550 1550 2950 1550
 Wire Wire Line
-	2950 1550 2950 4550
+	2950 1550 2950 2950
 Wire Wire Line
 	3250 1050 3250 1650
 Wire Wire Line
@@ -546,8 +546,6 @@ Wire Wire Line
 Wire Wire Line
 	3850 5450 4300 5450
 Wire Wire Line
-	3800 5100 3800 6350
-Wire Wire Line
 	3800 6350 4300 6350
 $Comp
 L Connector:DB9_Male J?
@@ -603,10 +601,6 @@ Wire Wire Line
 	2200 5000 3850 5000
 Wire Wire Line
 	1650 3250 2150 3250
-Wire Wire Line
-	2150 3250 2150 5100
-Wire Wire Line
-	2150 5100 3800 5100
 NoConn ~ 3800 6900
 Wire Wire Line
 	3800 6900 4300 6900
@@ -714,12 +708,6 @@ NoConn ~ 5950 7150
 Wire Wire Line
 	3150 3000 4800 3000
 Wire Wire Line
-	4600 3600 4600 2950
-Wire Wire Line
-	4600 2950 1650 2950
-Wire Wire Line
-	4600 3600 4800 3600
-Wire Wire Line
 	13950 5150 13950 2500
 Wire Wire Line
 	13950 2500 13550 2500
@@ -737,4 +725,52 @@ Wire Wire Line
 	14150 2700 13550 2700
 Wire Wire Line
 	5450 6600 14150 6600
+Wire Wire Line
+	13250 1500 13250 1450
+Wire Wire Line
+	13250 1450 13400 1450
+Wire Wire Line
+	13400 1450 13400 1050
+Wire Wire Line
+	13400 1050 9000 1050
+Wire Wire Line
+	9000 1050 9000 4550
+Wire Wire Line
+	9000 4550 6500 4550
+Connection ~ 6500 4550
+$Comp
+L Device:R_POT RV?
+U 1 1 6417FA5F
+P 2300 6150
+F 0 "RV?" H 2231 6196 50  0000 R CNN
+F 1 "R_POT" H 2231 6105 50  0000 R CNN
+F 2 "" H 2300 6150 50  0001 C CNN
+F 3 "~" H 2300 6150 50  0001 C CNN
+	1    2300 6150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2300 3600 4800 3600
+Wire Wire Line
+	2300 3600 2300 6000
+Wire Wire Line
+	1650 2950 2950 2950
+Connection ~ 2950 2950
+Wire Wire Line
+	2950 2950 2950 4550
+$Comp
+L power:GND #PWR?
+U 1 1 6418E4E2
+P 2450 6150
+F 0 "#PWR?" H 2450 5900 50  0001 C CNN
+F 1 "GND" H 2455 5977 50  0000 C CNN
+F 2 "" H 2450 6150 50  0001 C CNN
+F 3 "" H 2450 6150 50  0001 C CNN
+	1    2450 6150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2150 3250 2150 6150
+Text Notes 1800 6700 0    50   ~ 0
+Shunt-Widerstand Strommodulation\nDrehratensensor Kardanwelle
 $EndSCHEMATC

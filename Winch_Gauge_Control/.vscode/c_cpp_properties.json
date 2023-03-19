@@ -43,7 +43,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60105",
+                "PLATFORMIO=60106",
                 "ARDUINO_AVR_NANO",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",
@@ -53,7 +53,7 @@
             ],
             "cStandard": "c11",
             "cppStandard": "c++11",
-            "compilerPath": "C:/Users/Clemens Berger/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerPath": "C:/Users/Clemens Berger/.platformio/packages/toolchain-atmelavr@1.70300.191015/bin/avr-gcc.exe",
             "compilerArgs": [
                 "-mmcu=atmega168",
                 ""
