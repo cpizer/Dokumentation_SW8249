@@ -732,11 +732,7 @@ Wire Wire Line
 Wire Wire Line
 	13400 1450 13400 1050
 Wire Wire Line
-	13400 1050 9000 1050
-Wire Wire Line
-	9000 1050 9000 4550
-Wire Wire Line
-	9000 4550 6500 4550
+	13400 1050 10550 1050
 Connection ~ 6500 4550
 $Comp
 L Device:R_POT RV?
@@ -771,6 +767,10 @@ F 3 "" H 2450 6150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2150 3250 2150 6150
-Text Notes 1800 6700 0    50   ~ 0
-Shunt-Widerstand Strommodulation\nDrehratensensor Kardanwelle
+Text Notes 1050 6900 0    50   ~ 0
+Shunt-Widerstand Strommodulation\nDrehratensensor Kardanwelle\n->Auf geringen Spannungsabfall einzustellen,\num Unterspannung am Raddrehzahlsensor zur\nvermeiden
+Wire Wire Line
+	10550 4550 10550 1050
+Wire Wire Line
+	6500 4550 10550 4550
 $EndSCHEMATC
