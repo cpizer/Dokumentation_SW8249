@@ -2,6 +2,8 @@
 #include <Servo.h>
 //#include <RingBuf.h>
 
+//#define SERIAL_OUTPUT
+
 #define SPEED_GAUGE_PIN 6
 #define SPEED_PULSE_PIN 2
 #define RPM_GAUGE_PWM_PIN 5
@@ -10,12 +12,9 @@
 
 #define RPM_GAUGE_MAX_PWM 50L
 #define RPM_PULSE_BUFFER_MAX 5UL
-
-#define SPEED_PULSE_BUFFER_MAX 19
-#define PULSE_WIDTH_TO_MEASURED_SPEED 1700
-
+#define SPEED_PULSE_BUFFER_MAX 76
+#define PULSE_WIDTH_TO_MEASURED_SPEED 6800
 #define PULSE_WIDTH_TO_RPM 3000UL
-
 #define SPEEDOMETER_UPDATE_INTERVAL 20L
 #define SPEEDOMETER_SPEED_CHANGE_LIMIT 7
 
@@ -107,7 +106,9 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(RPM_PULSE_PIN), rpm_pulse_isr, RISING);
   attachInterrupt(digitalPinToInterrupt(SPEED_PULSE_PIN), speed_pulse_isr, RISING);
   speed_gauge_servo.attach(SPEED_GAUGE_PIN);
+  #ifdef SERIAL_OUTPUT
   Serial.begin(115200);
+  #endif
   set_rpm_to_gauge(0);
   int i;
   for (i=0; i<50; i++){
@@ -147,11 +148,15 @@ void loop() {
     rpm_pulse_buffer_limit_reached = false;
     rpm_to_display = (RPM_PULSE_BUFFER_MAX * PULSE_WIDTH_TO_RPM / rpm_pulse_period);
     set_rpm_to_gauge(rpm_to_display);
+    #ifdef SERIAL_OUTPUT
     Serial.print("RPM: ");
     Serial.println(rpm_to_display);
+    #endif
   }
   if (last_rpm_pulse + 600 < millis()){
     set_rpm_to_gauge(0);
+    #ifdef SERIAL_OUTPUT
     Serial.println("RPM: 0");
+    #endif
   }
 }
