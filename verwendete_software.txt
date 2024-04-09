@@ -1,4 +1,5 @@
 LOGO!Soft Comfort 8.2 (FSG-Oehringen Synology NAS/fsgoehringen/Winde/LOGOSoftComfort8_2)
 EAGLE 9.6.2 (Autodesk-Website)
 Scheme Editor (Bosch Rexroth Website)
-Visual Studio Code mit PlatformIO
+Arduino 1.8.19
+KiCad 6
