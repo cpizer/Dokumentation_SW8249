@@ -1,3 +1,5 @@
+Diese Hardware ist in der Komponente die im Schaltplan A7 heisst installiert.
+
 R4,R6,C3 mit circuitlab etwa auf 1kHz im timedomain eingestellt. R4
 und R6 halbieren die Eingangsspannung von den angenommenen 40V auf
 20V. Die negative Halbwelle fliest nur durch R4 und D6. Habe mit
